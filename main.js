@@ -42,9 +42,23 @@ const deleteCliente = (index) => {
     setLocalStorage(dbClient)
 }
 
+// INTERAÇÃO COM LAYOUT
+
+const isValidFields = () => {
+    return document.getElementById('form').reportValidity()
+}
+
+const saveCliente = () => {
+    if (isValidFields()) {
+        console.log("cadastrando cliente")
+    }
+}
 
 document.getElementById('cadastrarCliente')
     .addEventListener('click', openModal)
 
 document.getElementById('modalClose')
     .addEventListener('click', closeModal)
+
+document.getElementById('salvar')
+    .addEventListener('click', saveCliente)    
